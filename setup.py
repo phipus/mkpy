@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(
-    name="mkpy",
+    name="python-mkpy",
     author="phipus",
     packages=["mkpy"],
     version="0.0.1",
