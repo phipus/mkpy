@@ -8,6 +8,6 @@ setup(
     description="A (minimalistic) build tool simmilar to make. Written in Python 3",
     url="https://github.com/phipus/mkpy",
     packages=["mkpy"],
-    version="0.0.2",
+    version="0.0.3",
     entry_points={"console_scripts": "mkpy=mkpy.make:main"},
 )

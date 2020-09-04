@@ -46,6 +46,12 @@ def make_clean(*_):
 
 ```
 
+# Installation
+
+```sh
+pip install python-mkpy
+```
+
 # API
 
 ## `mkpy.target(name, *deps)`
