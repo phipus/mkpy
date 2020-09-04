@@ -56,12 +56,8 @@ To ignore the arguments, use *_.
 
 ### Arguments
 
-**name** specifies the target name as string or 
-optionally a regex to match against possible targets.
-
-**deps** specifies the dependencies of that target. It is supported
-to substitute regexp capture groups (use \1, \2, ...) to supsitute the
-groups.
+- **name** specifies the target name as string or optionally a regex to match against possible targets.
+- **deps** specifies the dependencies of that target. It is supported to substitute regexp capture groups (use \1, \2, ...) to supsitute the groups.
 
 
 ## `mkpy.sh(prog, *args, stdout=None, stderr=None, stdin=None, cwd=None)`
@@ -70,13 +66,11 @@ around pythons subprocess.check_call function.
 
 ### Arguments
 
-**prog** specifies a program (absolute path or just the name if it is in PATH)
+- **prog** specifies a program (absolute path or just the name if it is in PATH)
+- **args** specifies the arguments passed to prog.
+- **stdin**, **stdout** and **stderr** specifiy accordingly input, output and error output files. 
+- **cwd** specifies the working directory
 
-**args** specifies the arguments passed to prog.
-
-**stdin**, **stdout** and **stderr** specifiy accordingly input, output and error output files. 
-
-**cwd** specifies the working directory
 
 ## `mkpy.rm(*files, force=True)`
 
@@ -84,15 +78,14 @@ RM removes the specified files.
 
 ### Arguments
 
-**files** specifies the files to delete
+- **files** specifies the files to delete
+- if **force** force is true, it is no error if the file doesn't exist.
 
-if **force** force is true, it is no error if the file doesn't exist.
 
 ## `mkpy.make(directory, target)`
 Make executes mkpy in the specified directory.
 
 ### Arguments
 
-**directory** specifies the directory to change into
-
-**target** specifies the target to build
+- **directory** specifies the directory to change into
+- **target** specifies the target to build
