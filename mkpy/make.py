@@ -12,26 +12,23 @@ _imported = set()
 
 
 def target(name, *deps, phony=False):
-    if isinstance(name, re.Pattern):
-        expr = name
-    elif isinstance(name, str):
-        expr = re.compile(re.escape(name))
-    else:
-        raise TypeError("name must be str or re.Pattern not %s" % type(name))
-
-
     def decorator(f):
-        _targets.append((expr, deps, f, phony))
+        _targets.append((name, deps, f, phony))
         return f
     return decorator
 
 
 def make_target(target):
     for expr, deps, f, phony in _targets:
-        match = expr.search(target)
+        if isinstance(expr, re.Pattern):
+            match = expr.search(target)
+        else:
+            match = expr == target
+
         if match:
-            # recursiveley build all dependencies
-            deps = [match.expand(dep) for dep in deps]
+            if isinstance(expr, re.Pattern):
+                deps = [match.expand(dep) for dep in deps]
+
             build = phony
 
             # make all dependencies. If a dependency was built, also build this target
