@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(
-    name="mkpy",
+    name="python-mkpy",
     author="phipus",
     author_email="phipuspam@gmx.ch",
     description="A (minimalistic) build tool simmilar to make. Written in Python 3",
